@@ -1,0 +1,2 @@
+web: gunicorn {{ cookiecutter.repo_name }}.wsgi --log-file -
+scheduler: celery worker -B -A {{ cookiecutter.repo_name }} -l info

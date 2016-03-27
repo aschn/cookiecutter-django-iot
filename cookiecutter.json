@@ -1,0 +1,10 @@
+{
+	"full_name": "Anna Schneider",
+	"email": "annarschneider@gmail.com",
+	"github_username": "aschn",
+	"project_name": "Django for IoT",
+	"repo_name": "django_iot",
+	"description": "Cookiecutter template for IoT projects using Django (with celery and Heroku support)",
+	"open_source_license": "MIT",
+	"year": "2016",
+}
