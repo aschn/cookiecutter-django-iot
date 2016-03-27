@@ -56,3 +56,30 @@ If you add any kwargs to tasks, make sure to add them using `add_arguments` in `
 If you're using celery, you may also want to adjust the schedule of tasks in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/schedule.py`.
 
 And if you want a web UI that's more fun than the default admin, you'll want to add views to one or more of the apps (and to `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/urls.py`).
+
+# Deploy to Heroku
+## Basic deploy
+After you've git-committed all your local changes, just create a Heroku app with the basic environment variables, push, and set up the initial database:
+```
+heroku create {{ cookiecutter.heroku_name }}
+heroku config:set DJANGO_SETTINGS_MODULE={{ cookiecutter.repo_name }}.settings.production
+heroku config:set SECRET_KEY=[your value]
+git push heroku master
+heroku run python manage.py migrate
+heroku run python manage.py createsuperuser
+```
+
+## Using management commands + Heroku Scheduler
+Add the free Heroku Scheduler add-on:
+```
+heroku addons:create scheduler:standard
+```
+Then go to https://scheduler.heroku.com/dashboard and schedule management commands (eg `python manage.py interact refresh_all`).
+
+
+## Using celery + CloudAMQP
+Add the CloudAMQP add-on at the free level:
+```
+heroku addons:create cloudamqp:lemur
+```
+Then go to https://dashboard.heroku.com/apps/{{ cookiecutter.heroku_name }} and spin up one `scheduler` dyno.
