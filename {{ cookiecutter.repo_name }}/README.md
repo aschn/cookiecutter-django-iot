@@ -1,7 +1,7 @@
 # {{ cookiecutter.project_name }}
 {{ cookiecutter.description }}
 
-# Local set-up
+# Set up your local development environment
 ## Environment
 You'll always need this:
 ```
@@ -39,7 +39,8 @@ If you navigate to http://localhost:8000, you should see a filler template.
 If you navigate to http://localhost:8000/admin, you should be able to sign in using your superuser account
 and see admin pages for the `Device`, `Attribute`, and `PowerStatus` models.
 
-## Test and develop
+# Make your app
+Start by running the tests:
 ```
 python manage.py test
 ```
@@ -49,3 +50,9 @@ The tests in the `devices` and `observations` apps should pass, but the tests in
 To make a working app, edit `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tasks.py`
 to actually perform your tasks,
 and update the tests at `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tests/test_tasks.py`.
+
+If you add any kwargs to tasks, make sure to add them using `add_arguments` in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/management/commands/interact.py`.
+
+If you're using celery, you may also want to adjust the schedule of tasks in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/schedule.py`.
+
+And if you want a web UI that's more fun than the default admin, you'll want to add views to one or more of the apps (and to `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/urls.py`).
