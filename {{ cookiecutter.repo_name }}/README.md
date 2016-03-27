@@ -29,7 +29,17 @@ python manage.py createsuperuser
 python manage.py collectstatic --noinput
 ```
 
-## Test
+## Run the development server
+```
+python manage.py runserver
+```
+
+If you navigate to localhost:8000, you should see a filler template.
+
+If you navigate to localhost:8000/admin, you should be able to sign in using your superuser account
+and see admin pages for the `Device`, `Attribute`, and `PowerStatus` models.
+
+## Test and develop
 ```
 python manage.py test
 ```
