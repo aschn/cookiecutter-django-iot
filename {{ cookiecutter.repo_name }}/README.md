@@ -3,10 +3,22 @@
 
 # Local set-up
 ## Environment
+You'll always need this:
 ```
-createdb mydbname
-export DATABASE_URL=postgres://localhost/mydbname
 export SECRET_KEY=[your value]
+```
+
+The default database is sqlite3. If you're using Postgres, then set up a database:
+```
+createdb {{ cookiecutter.repo_name }}
+export DATABASE_URL=postgres://localhost/{{ cookiecutter.repo_name }}
+```
+
+This project is compatible with celery using a RabbitMQ (amqp) backend.
+To use celery locally, [install RabbitMQ](https://www.rabbitmq.com/download.html),
+then run rabbit in the background:
+```
+rabbitmq-server &
 ```
 
 ## Django
@@ -14,6 +26,7 @@ export SECRET_KEY=[your value]
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
+python manage.py collectstatic --noinput
 ```
 
 ## Test
@@ -22,6 +35,7 @@ python manage.py test
 ```
 
 The tests in the `devices` and `observations` apps should pass, but the tests in the `interactions` app should fail.
+
 To make a working app, edit `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tasks.py`
 to actually perform your tasks,
 and update the tests at `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tests/test_tasks.py`.
