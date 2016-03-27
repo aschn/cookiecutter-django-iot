@@ -2,8 +2,5 @@ celery>=3.1
 dj-database-url>=0.4.0
 Django>=1.9
 gunicorn>=19.4.5
-mock>=1.0.1
 psycopg2==2.6.1
-requests>=2.9
-tweepy>=3.5
 whitenoise>=2.0
