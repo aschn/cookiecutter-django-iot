@@ -76,7 +76,7 @@ class TestPowerStatus(TestCase):
         for ihour in range(10):
             PowerStatus.objects.create(
                 valid_at=sample_time-timedelta(hours=ihour),
-                value=ihour*0.5,
+                device=self.device,
                 is_on=True,
             )
 
@@ -90,7 +90,7 @@ class TestPowerStatus(TestCase):
 
     def test_value_bool(self):
         # raises ValueError when trying to cast string 'badvalue' to float
-        self.assertRaises(ValueError, PowerStatus.objects.create,
-                          valid_at=timezone.now(),
-                          device=self.device,
-                          is_on='badvalue')
+        status = PowerStatus.objects.create(valid_at=timezone.now(),
+                                            device=self.device,
+                                            is_on='truthy')
+        self.assertTrue(status.is_on)
