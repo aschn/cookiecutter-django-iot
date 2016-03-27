@@ -48,10 +48,9 @@ python manage.py test
 The tests in the `devices` and `observations` apps should pass, but the tests in the `interactions` app should fail.
 
 To make a working app, edit `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tasks.py`
-to actually perform your tasks,
-and update the tests at `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tests/test_tasks.py`.
+to actually perform your tasks. Also update the tests at `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/tests/test_tasks.py` accordingly.
 
-If you add any kwargs to tasks, make sure to add them using `add_arguments` in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/management/commands/interact.py`.
+If you add any kwargs to tasks, make sure to add them using `add_argument` in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/management/commands/interact.py`.
 
 If you're using celery, you may also want to adjust the schedule of tasks in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/schedule.py`.
 
