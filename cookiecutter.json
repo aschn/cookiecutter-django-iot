@@ -4,6 +4,7 @@
 	"github_username": "aschn",
 	"project_name": "Django for IoT",
 	"repo_name": "django_iot",
+	"heroku_name": "django-iot-demo",
 	"description": "Cookiecutter template for IoT projects using Django (with celery and Heroku support)",
 	"open_source_license": "MIT",
 	"year": "2016"
