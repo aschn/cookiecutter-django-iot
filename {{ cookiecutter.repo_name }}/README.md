@@ -75,7 +75,7 @@ heroku addons:create scheduler:standard
 ```
 Then go to https://scheduler.heroku.com/dashboard and schedule management commands (eg `python manage.py interact refresh_all`).
 
-*Warnings*:
+**Warnings**:
 * job scheduling is inflexible compared to celery
 * jobs are not guaranteed to run
 
@@ -87,7 +87,7 @@ heroku addons:create cloudamqp:lemur
 
 Then spin up one `scheduler` dyno.
 
-*Warnings*:
+**Warnings**:
 * this will start running the schedule defined in `{{ cookiecutter.repo_name }}/{{ cookiecutter.repo_name }}/apps/interactions/schedule.py`
 * the scheduler dyno will sleep whenever the web dyno is sleeping, even if the crontab would otherwise be triggering a task
 * do not spin up more than one scheduler dyno--if you need more than one, add a line to your `Procfile` like `celery worker -A django_iot -l info` (the difference is the lack of `-B`)
