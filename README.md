@@ -11,9 +11,10 @@ Features:
 * Celery 3.1
 * Heroku compatible
 * data model (including admin pages) for `Device`, `Attribute` (numerical observations with units), and `PowerStatus` (boolean observation of on/off status)
-* placeholder tasks to interact with devices (`pull_attributes`, `set_status`, etc)
+* placeholder tasks to interact with devices (`pull_attributes`, `set_status`, etc) **<- only code you might have to write!!**
 * management commands to run tasks on the command line (or via Heroku Scheduler, cron, etc)
 * celery infrastructure to schedule and run periodic background tasks
+* test suite to jumpstart your TDD
 
 # Quickstart
 
