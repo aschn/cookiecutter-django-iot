@@ -95,3 +95,12 @@ Then spin up one `scheduler` dyno.
 ```
 heroku ps:scale scheduler=1
 ```
+
+### A few celery resources
+
+* http://docs.celeryproject.org/en/latest/django/first-steps-with-django.html
+* https://www.cloudamqp.com/docs/celery.html
+* https://library.launchkit.io/three-quick-tips-from-two-years-with-celery-c05ff9d7f9eb
+* https://realpython.com/blog/python/asynchronous-tasks-with-django-and-celery/
+* https://devcenter.heroku.com/articles/celery-heroku#celery-and-django
+* http://pyvideo.org/video/1382/using-celery-with-social-networks
