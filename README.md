@@ -3,7 +3,7 @@ Cookiecutter template for IoT projects using Django (with celery and Heroku supp
 
 # Description
 
-This cookiecutter template is a great place to start if you're building a Django app to monitor and control third-party Internet of Things devices through their APIs. It was originally assembled to accompany my talk on Django for IoT at DjangoCon Europe 2016 ([slides](https://speakerdeck.com/aschn/django-for-internet-of-things-from-hackathon-to-production)).
+This cookiecutter template is a great place to start if you're building a Django app to monitor and control third-party Internet of Things devices through their APIs. It was originally assembled to accompany my talk on Django for IoT at DjangoCon Europe 2016 ([slides](https://speakerdeck.com/aschn/django-for-internet-of-things-from-hackathon-to-production), [video](https://opbeat.com/events/djangocon-eu-2016#iot-with-django-from-hackathon-to-production)).
 
 Features:
 * Django 1.9
